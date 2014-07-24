@@ -12,12 +12,33 @@
 
 @property (nonatomic) NSArray * listItems;
 
-// create an array for students - NSStrings
+// create an array for students - NSString
 
-// create an array for colors - UIColors
+@property (nonatomic) NSArray * listStudents;
 
-// create an array for sizes - NSNumbers
+// create an array for colors - UIColor
 
+@property (nonatomic) NSArray * listColors;
+
+// create an array for sizes - NSNumber
+
+@property (nonatomic) NSArray * listNumbers;
+
+// other examples
+
+//@property (nonatomic) NSString* myName;
+//@property (nonatomic) int myAge;
+
+
+///////////
+///////////
+///////////
+
+@property (nonatomic) NSArray * info;
+
+///////////
+///////////
+///////////
 
 @end
 
@@ -41,17 +62,25 @@
         // getter method
 //        [self.listItems:@[@"Monday",@"Tuesay",@"Wednesday",@"Thursday"]];
         
-        self.listItems = @[@"Monday",@"Tuesay",@"Wednesday",@"Thursday"]; // last three
+        self.listItems = @[@"Monday",@"Tuesay",@"Wednesday",@"Thursday",@"Friday",@"Saturday",@"Sunday"]; // last three
         
         // set 7 students
         
+        self.listStudents = @[@"Laura",@"Ted",@"Morgan",@"George",@"Tim",@"Daniel",@"Katie"];
+        
         // set 7 colors
+    
+        self.listColors = @[[UIColor redColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor purpleColor],[UIColor grayColor]];
         
         // set 7 numbers (20 - 40)
         
+        self.listNumbers = @[@20,@24,@28,@30,@32,@33,@40];
         
         
-        
+        self.info = @[
+                      @{@"day":@"Monday",@"student":@"Laura"},
+                      @{@"day":@"Tuesday"}
+                      ];
         
     }
     return self;
@@ -90,26 +119,42 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    UITableViewCell * cell = [[UITableViewCell alloc] init];
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@""];
     
 //    NSString * listItem = [self.listItems objectAtIndex:indexPath.row];
+    
+//    NSDictionary * infoItem = self.info[indexPath.row];
+    
+//    NSString * day = infoItem[@"day"];
     
     
     // GETTING ITEM FROM AN ARRAY
     
     NSString * listItem = self.listItems[indexPath.row];
     
-   // set background color to color in array
-    
     NSLog(@"listItem = %@",listItem);
     
     cell.textLabel.text = listItem;
     
+//     cell.textLabel.text = infoItem[@"day"];
+    
+    // set background color to color in array
+    
+    UIColor * color = self.listColors[indexPath.row];
+    
+    cell.backgroundColor = color;
+    
     // there is a sub text option/property to set by student name
     
-    cell.backgroundColor = [UIColor greenColor];
+    NSString * listStudents = self.listStudents[indexPath.row];
+
+    cell.detailTextLabel.text = listStudents;
     
     // set the textlabel font size to a number from the last array
+    
+    NSNumber * listNumbers = self.listNumbers[indexPath.row];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:[listNumbers integerValue]];
     
     // Configure the cell...
     
