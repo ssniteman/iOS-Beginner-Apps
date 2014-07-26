@@ -69,14 +69,17 @@
     
     //////// HEADER VIEW /////////////
     
-    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 85)];
+    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 70)];
+    
+    headerView.backgroundColor = [UIColor colorWithRed:0.976f green:0.094f blue:0.329f alpha:1.0f];
     
     self.tableView.tableHeaderView = headerView;
     
-    UITextField * headerTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 40, 225, 40)];
+    UITextField * headerTextField = [[UITextField alloc] initWithFrame:CGRectMake(15, 15, 250, 40)];
     
     headerTextField.layer.borderColor = [UIColor grayColor].CGColor;
     headerTextField.layer.borderWidth = 1;
+    headerTextField.layer.cornerRadius = 10;
     headerTextField.backgroundColor = [UIColor whiteColor];
     
     [headerView addSubview:headerTextField];
@@ -109,7 +112,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    return 110;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

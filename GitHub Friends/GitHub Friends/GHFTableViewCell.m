@@ -22,9 +22,9 @@
     if (self) {
         // Initialization code
         
-    friendName = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 200, 40)];
+    friendName = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 200, 40)];
         
-        friendName.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30];
+        friendName.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25];
         friendName.textColor = [UIColor grayColor];
         [self.contentView addSubview:friendName];
         
@@ -32,8 +32,8 @@
         [self.contentView addSubview:friendImage];
         
         
-    friendLocation = [[UILabel alloc] initWithFrame:CGRectMake(70, 35, 210, 50)];
-        friendLocation.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20];
+    friendLocation = [[UILabel alloc] initWithFrame:CGRectMake(120, 35, 210, 50)];
+        friendLocation.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:15];
         friendLocation.textColor = [UIColor grayColor];
         [self.contentView addSubview:friendLocation];
         
@@ -59,7 +59,7 @@
         
         ///// PICTURE /////
         
-        UIButton * pictureButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 130, 130)];
+        UIButton * pictureButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 110, 110)];
         
         [self.contentView addSubview:pictureButton];
         
