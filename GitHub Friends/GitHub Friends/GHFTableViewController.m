@@ -9,8 +9,11 @@
 #import "GHFTableViewController.h"
 #import "GHFTableViewCell.h"
 #import "GHFViewController.h"
-@interface GHFTableViewController ()
+#import "GRAGitHubRequest.h"
 
+// 6f942548f31e328c4661f9ccfd856127c34e0372
+
+@interface GHFTableViewController ()
 @end
 
 @implementation GHFTableViewController
@@ -20,6 +23,7 @@
 {
     
     NSMutableArray * githubFriends;
+    UITextField * headerTextField;
 
 }
 
@@ -33,42 +37,14 @@
         
 
         
-        githubFriends = [@[
-                           @{
-                            @"login": @"ssniteman",
-                            @"id": @"4793213",
-                            @"html_url":@"https://github.com/ssniteman",
-                            @"avatar_url": @"https://avatars.githubusercontent.com/u/4793213?",
-                            @"name": @"Shane Sniteman",
-                            @"location": @"Atlanta, GA",
-                            @"email": @"ssniteman@gmail.com"},
-                           @{
-                                @"login": @"mertid",
-                                @"id": @7989843,
-                                @"avatar_url": @"https://avatars.githubusercontent.com/u/7989843?",
-                                @"gravatar_id": @"33fd04f8cd10ece8681c1431ef5f0b09",
-                                @"url": @"https://api.github.com/users/mertid",
-                                @"html_url": @"https://github.com/mertid",
-                                @"name": @"Merritt Tidwell",
-                                @"location": @"Atlanta, GA",
-                                @"email": @"Merritt.tidwell@gmail.com",
-                                @"followers": @0,
-                                @"following": @0,
-                            },
-                           @{@"login":@"npeterson213"},
-                           @{@"login":@"schwaebek"},
-                           @{@"login":@"josephlausf"},
-                           @{@"login":@"Kalson"},
-                           @{@"login":@"jeremycbutler"},
-                           @{@"login":@"renecandelier"},
-                           @{@"login":@"ericstephen"},
-                           @{@"login":@"schwaebek"},
-                           @{@"login":@"EWJSeidel"},
-                           @{@"login":@"mjhend11"},
-                           @{@"login":@"ssneller"},
-                           @{@"login":@"dmerrill88"},
-                           @{@"login":@"JaimeConnor"},
-                           ] mutableCopy];
+        githubFriends = [@[] mutableCopy];
+        
+        NSArray * loadedUsers = [GRAGitHubRequest loadUsers];
+        
+        if (loadedUsers)
+        {
+            githubFriends = [loadedUsers mutableCopy];
+        }
         
     }
     return self;
@@ -87,7 +63,7 @@
     
     self.tableView.tableHeaderView = headerView;
     
-    UITextField * headerTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 250, 40)];
+    headerTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 250, 40)];
     
     headerTextField.layer.borderColor = [UIColor grayColor].CGColor;
     headerTextField.layer.borderWidth = 1;
@@ -100,6 +76,8 @@
     
     glassButton.backgroundColor = [UIColor whiteColor];
     glassButton.layer.cornerRadius = 20;
+    [glassButton addTarget:self action:@selector(addUser) forControlEvents:UIControlEventTouchUpInside];
+    
     
     [headerView addSubview:glassButton];
 
@@ -114,10 +92,18 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)addUser
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"search button has been touched up inside");
+    
+    NSDictionary * userInfo = [GRAGitHubRequest requestUserInfo:headerTextField.text];
+    
+    [githubFriends addObject:userInfo];
+    
+    [self.tableView reloadData];
+    
+    [GRAGitHubRequest saveUsers:githubFriends];
+
 }
 
 #pragma mark - Table view data source
@@ -220,17 +206,6 @@
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 */
 

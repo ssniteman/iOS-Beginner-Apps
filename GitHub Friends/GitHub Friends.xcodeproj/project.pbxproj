@@ -20,8 +20,13 @@
 		60591C4619813F21007C98C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60591C4419813F21007C98C8 /* InfoPlist.strings */; };
 		60591C4819813F21007C98C8 /* GitHub_FriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60591C4719813F21007C98C8 /* GitHub_FriendsTests.m */; };
 		60591C5419813FAA007C98C8 /* GHFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60591C5319813FAA007C98C8 /* GHFTableViewController.m */; };
-		60591C5719814802007C98C8 /* GHFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60591C5619814802007C98C8 /* GHFTableViewCell.m */; };
 		60A456EC1982A7EB00E32BAA /* GHFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A456EB1982A7EB00E32BAA /* GHFViewController.m */; };
+		60A4572D1986A07900E32BAA /* GRAGitHubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A4572C1986A07900E32BAA /* GRAGitHubRequest.m */; };
+		60A457351986C5F100E32BAA /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A457311986C5F100E32BAA /* downArrow.png */; };
+		60A457361986C5F100E32BAA /* profileArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A457321986C5F100E32BAA /* profileArrow.png */; };
+		60A457371986C5F100E32BAA /* searchButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A457331986C5F100E32BAA /* searchButton.png */; };
+		60A457381986C5F100E32BAA /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A457341986C5F100E32BAA /* upArrow.png */; };
+		60A457401986C74900E32BAA /* GHFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A4573F1986C74900E32BAA /* GHFTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +58,16 @@
 		60591C4719813F21007C98C8 /* GitHub_FriendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHub_FriendsTests.m; sourceTree = "<group>"; };
 		60591C5219813FAA007C98C8 /* GHFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHFTableViewController.h; path = "GitHub Friends/GHFTableViewController.h"; sourceTree = "<group>"; };
 		60591C5319813FAA007C98C8 /* GHFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHFTableViewController.m; path = "GitHub Friends/GHFTableViewController.m"; sourceTree = "<group>"; };
-		60591C5519814802007C98C8 /* GHFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHFTableViewCell.h; path = "GitHub Friends/GHFTableViewCell.h"; sourceTree = "<group>"; };
-		60591C5619814802007C98C8 /* GHFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHFTableViewCell.m; path = "GitHub Friends/GHFTableViewCell.m"; sourceTree = "<group>"; };
 		60A456EA1982A7EB00E32BAA /* GHFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHFViewController.h; path = "GitHub Friends/GHFViewController.h"; sourceTree = "<group>"; };
 		60A456EB1982A7EB00E32BAA /* GHFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHFViewController.m; path = "GitHub Friends/GHFViewController.m"; sourceTree = "<group>"; };
+		60A4572B1986A07900E32BAA /* GRAGitHubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GRAGitHubRequest.h; path = "../GitHub Request/GitHub Request/GRAGitHubRequest.h"; sourceTree = "<group>"; };
+		60A4572C1986A07900E32BAA /* GRAGitHubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GRAGitHubRequest.m; path = "../GitHub Request/GitHub Request/GRAGitHubRequest.m"; sourceTree = "<group>"; };
+		60A457311986C5F100E32BAA /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = "GitHub Friends/githubFriends/downArrow.png"; sourceTree = "<group>"; };
+		60A457321986C5F100E32BAA /* profileArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profileArrow.png; path = "GitHub Friends/githubFriends/profileArrow.png"; sourceTree = "<group>"; };
+		60A457331986C5F100E32BAA /* searchButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchButton.png; path = "GitHub Friends/githubFriends/searchButton.png"; sourceTree = "<group>"; };
+		60A457341986C5F100E32BAA /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = "GitHub Friends/githubFriends/upArrow.png"; sourceTree = "<group>"; };
+		60A4573E1986C74900E32BAA /* GHFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHFTableViewCell.h; path = "GitHub Friends/GHFTableViewCell.h"; sourceTree = "<group>"; };
+		60A4573F1986C74900E32BAA /* GHFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHFTableViewCell.m; path = "GitHub Friends/GHFTableViewCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +97,7 @@
 		60591C1619813F21007C98C8 = {
 			isa = PBXGroup;
 			children = (
+				60A4572F1986C59300E32BAA /* Images */,
 				60591C5119813F87007C98C8 /* Controllers */,
 				60591C2819813F21007C98C8 /* GitHub Friends */,
 				60591C4119813F21007C98C8 /* GitHub FriendsTests */,
@@ -157,14 +169,27 @@
 		60591C5119813F87007C98C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				60A4573E1986C74900E32BAA /* GHFTableViewCell.h */,
+				60A4573F1986C74900E32BAA /* GHFTableViewCell.m */,
+				60A4572B1986A07900E32BAA /* GRAGitHubRequest.h */,
+				60A4572C1986A07900E32BAA /* GRAGitHubRequest.m */,
 				60591C5219813FAA007C98C8 /* GHFTableViewController.h */,
 				60591C5319813FAA007C98C8 /* GHFTableViewController.m */,
-				60591C5519814802007C98C8 /* GHFTableViewCell.h */,
-				60591C5619814802007C98C8 /* GHFTableViewCell.m */,
 				60A456EA1982A7EB00E32BAA /* GHFViewController.h */,
 				60A456EB1982A7EB00E32BAA /* GHFViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		60A4572F1986C59300E32BAA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				60A457311986C5F100E32BAA /* downArrow.png */,
+				60A457321986C5F100E32BAA /* profileArrow.png */,
+				60A457331986C5F100E32BAA /* searchButton.png */,
+				60A457341986C5F100E32BAA /* upArrow.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60A457351986C5F100E32BAA /* downArrow.png in Resources */,
 				60591C2D19813F21007C98C8 /* InfoPlist.strings in Resources */,
 				60591C3519813F21007C98C8 /* Images.xcassets in Resources */,
+				60A457361986C5F100E32BAA /* profileArrow.png in Resources */,
+				60A457381986C5F100E32BAA /* upArrow.png in Resources */,
+				60A457371986C5F100E32BAA /* searchButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +294,8 @@
 			files = (
 				60A456EC1982A7EB00E32BAA /* GHFViewController.m in Sources */,
 				60591C3319813F21007C98C8 /* GHFAppDelegate.m in Sources */,
-				60591C5719814802007C98C8 /* GHFTableViewCell.m in Sources */,
+				60A4572D1986A07900E32BAA /* GRAGitHubRequest.m in Sources */,
+				60A457401986C74900E32BAA /* GHFTableViewCell.m in Sources */,
 				60591C5419813FAA007C98C8 /* GHFTableViewController.m in Sources */,
 				60591C2F19813F21007C98C8 /* main.m in Sources */,
 			);

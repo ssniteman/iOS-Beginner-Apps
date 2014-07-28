@@ -27,14 +27,14 @@
     friendName = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 200, 40)];
         
         friendName.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25];
-        friendName.textColor = [UIColor grayColor];
+        friendName.textColor = [UIColor whiteColor];
         [self.contentView addSubview:friendName];
         
         friendImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
         [self.contentView addSubview:friendImage];
         
         
-    friendLocation = [[UILabel alloc] initWithFrame:CGRectMake(120, 35, 210, 50)];
+    friendLocation = [[UILabel alloc] initWithFrame:CGRectMake(120, 30, 210, 50)];
         friendLocation.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:15];
         friendLocation.textColor = [UIColor grayColor];
         [self.contentView addSubview:friendLocation];
@@ -44,7 +44,7 @@
         
         UIButton * rightNumberButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 75, 30, 30)];
         
-        rightNumberButton.backgroundColor = [UIColor greenColor];
+        rightNumberButton.backgroundColor = [UIColor whiteColor];
         rightNumberButton.layer.cornerRadius = 15;
         [self.contentView addSubview:rightNumberButton];
         
@@ -84,12 +84,10 @@
         
         
         ///// PICTURE /////
+
+        friendImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 110, 110)];
         
-//        UIButton * pictureButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 110, 110)];
-//        
-//        [self.contentView addSubview:pictureButton];
-//        
-//        pictureButton.backgroundColor = [UIColor grayColor];
+        [self.contentView addSubview:friendImage];
         
         
         ///// TEXT /////

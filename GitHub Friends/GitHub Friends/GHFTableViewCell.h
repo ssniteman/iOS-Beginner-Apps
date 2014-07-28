@@ -12,4 +12,5 @@
 
 @property (nonatomic) NSDictionary * friendInfo;
 
+// hey
 @end
