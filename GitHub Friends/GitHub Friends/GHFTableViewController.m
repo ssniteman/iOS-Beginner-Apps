@@ -40,9 +40,21 @@
                             @"html_url":@"https://github.com/ssniteman",
                             @"avatar_url": @"https://avatars.githubusercontent.com/u/4793213?",
                             @"name": @"Shane Sniteman",
-                            @"location": @"Atlanta",
+                            @"location": @"Atlanta, GA",
                             @"email": @"ssniteman@gmail.com"},
-                           @{@"login":@"mertid"},
+                           @{
+                                @"login": @"mertid",
+                                @"id": @7989843,
+                                @"avatar_url": @"https://avatars.githubusercontent.com/u/7989843?",
+                                @"gravatar_id": @"33fd04f8cd10ece8681c1431ef5f0b09",
+                                @"url": @"https://api.github.com/users/mertid",
+                                @"html_url": @"https://github.com/mertid",
+                                @"name": @"Merritt Tidwell",
+                                @"location": @"Atlanta, GA",
+                                @"email": @"Merritt.tidwell@gmail.com",
+                                @"followers": @0,
+                                @"following": @0,
+                            },
                            @{@"login":@"npeterson213"},
                            @{@"login":@"schwaebek"},
                            @{@"login":@"josephlausf"},
@@ -75,7 +87,7 @@
     
     self.tableView.tableHeaderView = headerView;
     
-    UITextField * headerTextField = [[UITextField alloc] initWithFrame:CGRectMake(15, 15, 250, 40)];
+    UITextField * headerTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 250, 40)];
     
     headerTextField.layer.borderColor = [UIColor grayColor].CGColor;
     headerTextField.layer.borderWidth = 1;
@@ -83,6 +95,13 @@
     headerTextField.backgroundColor = [UIColor whiteColor];
     
     [headerView addSubview:headerTextField];
+    
+    UIButton * glassButton = [[UIButton alloc] initWithFrame:CGRectMake(270, 15, 40, 40)];
+    
+    glassButton.backgroundColor = [UIColor whiteColor];
+    glassButton.layer.cornerRadius = 20;
+    
+    [headerView addSubview:glassButton];
 
     
     
@@ -127,6 +146,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     GHFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     
