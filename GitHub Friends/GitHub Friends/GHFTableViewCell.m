@@ -7,6 +7,7 @@
 //
 
 #import "GHFTableViewCell.h"
+#import "GHFViewController.h"
 
 @implementation GHFTableViewCell
 
@@ -47,6 +48,7 @@
         rightNumberButton.backgroundColor = [UIColor whiteColor];
         rightNumberButton.layer.cornerRadius = 15;
         [self.contentView addSubview:rightNumberButton];
+    
         
 
         UIButton * gistButton = [[UIButton alloc] initWithFrame:CGRectMake( 225, 75, 80, 30)];
@@ -58,6 +60,8 @@
         gistButton.layer.borderWidth = 1;
         gistButton.layer.borderColor = [UIColor whiteColor].CGColor;
         [gistButton setTitle:@"Gists" forState:UIControlStateNormal];
+        
+        [gistButton addTarget:self action:@selector(gistButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         
         
         UIButton * upDownButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 75, 30, 30)];
@@ -81,6 +85,9 @@
         nextViewButton.backgroundColor = [UIColor redColor];
         nextViewButton.layer.cornerRadius = 15;
         [self.contentView addSubview:nextViewButton];
+        
+        
+        [nextViewButton addTarget:self action:@selector(nextViewButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         
         
         ///// PICTURE /////
@@ -147,5 +154,37 @@
 
     // Configure the view for the selected state
 }
+
+- (void)nextViewButtonClicked
+{
+    NSLog(@"Next View Button was clicked");
+    
+    GHFViewController * profileView = [[GHFViewController alloc] init];
+    
+    profileView.view.backgroundColor = [UIColor lightGrayColor];
+    
+    /// SETTER METHOD ////
+    
+    profileView.friendInfo = self.friendInfo;
+    
+    [self.navigationController pushViewController:profileView animated:YES];
+}
+
+- (void)gistButtonClicked
+{
+    GHFViewController * profileView = [[GHFViewController alloc] init];
+    
+    profileView.view.backgroundColor = [UIColor lightGrayColor];
+    
+    /// SETTER METHOD ////
+    
+    NSString * gistURL = [NSString stringWithFormat:@"https://gist.github.com/%@",self.friendInfo[@"login"]];
+    
+    
+    profileView.friendInfo = @{@"html_url":gistURL};
+    
+    [self.navigationController pushViewController:profileView animated:YES];
+}
+   
 
 @end

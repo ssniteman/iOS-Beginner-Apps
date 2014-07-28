@@ -169,12 +169,12 @@
 		60591C5119813F87007C98C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				60A4573E1986C74900E32BAA /* GHFTableViewCell.h */,
-				60A4573F1986C74900E32BAA /* GHFTableViewCell.m */,
 				60A4572B1986A07900E32BAA /* GRAGitHubRequest.h */,
 				60A4572C1986A07900E32BAA /* GRAGitHubRequest.m */,
 				60591C5219813FAA007C98C8 /* GHFTableViewController.h */,
 				60591C5319813FAA007C98C8 /* GHFTableViewController.m */,
+				60A4573E1986C74900E32BAA /* GHFTableViewCell.h */,
+				60A4573F1986C74900E32BAA /* GHFTableViewCell.m */,
 				60A456EA1982A7EB00E32BAA /* GHFViewController.h */,
 				60A456EB1982A7EB00E32BAA /* GHFViewController.m */,
 			);
