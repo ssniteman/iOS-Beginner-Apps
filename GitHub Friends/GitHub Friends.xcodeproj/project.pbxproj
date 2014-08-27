@@ -97,7 +97,10 @@
 		60591C1619813F21007C98C8 = {
 			isa = PBXGroup;
 			children = (
-				60A4572F1986C59300E32BAA /* Images */,
+				60A457311986C5F100E32BAA /* downArrow.png */,
+				60A457321986C5F100E32BAA /* profileArrow.png */,
+				60A457331986C5F100E32BAA /* searchButton.png */,
+				60A457341986C5F100E32BAA /* upArrow.png */,
 				60591C5119813F87007C98C8 /* Controllers */,
 				60591C2819813F21007C98C8 /* GitHub Friends */,
 				60591C4119813F21007C98C8 /* GitHub FriendsTests */,
@@ -179,17 +182,6 @@
 				60A456EB1982A7EB00E32BAA /* GHFViewController.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		60A4572F1986C59300E32BAA /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				60A457311986C5F100E32BAA /* downArrow.png */,
-				60A457321986C5F100E32BAA /* profileArrow.png */,
-				60A457331986C5F100E32BAA /* searchButton.png */,
-				60A457341986C5F100E32BAA /* upArrow.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

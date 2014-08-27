@@ -60,7 +60,7 @@
     
     // then we archive
     
-    NSData * userData = [NSKeyedArchiver archivedDataWithRootObject:users];
+    NSData * userData = [NSKeyedArchiver archivedDataWithRootObject:users];
     
     // the we save file
     

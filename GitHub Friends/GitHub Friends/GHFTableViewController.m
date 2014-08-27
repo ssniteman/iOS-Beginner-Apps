@@ -100,11 +100,17 @@
     
     NSDictionary * userInfo = [GRAGitHubRequest requestUserInfo:headerTextField.text];
     
-    [githubFriends addObject:userInfo];
+//    [githubFriends addObject:userInfo];
+    
+    // add an object to the beginning
+    
+    [githubFriends insertObject:userInfo atIndex:0];
     
     [self.tableView reloadData];
     
     [GRAGitHubRequest saveUsers:githubFriends];
+    
+    [headerTextField resignFirstResponder];
 
 }
 
@@ -116,6 +122,9 @@
     // Return the number of sections.
 //    return 1;
 //}
+
+
+// height of each cell
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -156,7 +165,7 @@
     return cell;
 }
 
-
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Select row at %@",indexPath);
@@ -171,7 +180,7 @@
     
     [self.navigationController pushViewController:profileView animated:YES];
 }
-
+*/
 
 
 // Override to support conditional editing of the table view.

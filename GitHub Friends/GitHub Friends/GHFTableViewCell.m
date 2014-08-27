@@ -15,6 +15,8 @@
     UILabel * friendName;
     UILabel * friendLocation;
     UIImageView * friendImage;
+    UIButton * nextViewButton;
+    UIButton * rightNumberButton;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -43,11 +45,23 @@
         
         ///// BUTTONS
         
-        UIButton * rightNumberButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 75, 30, 30)];
+        rightNumberButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 75, 30, 30)];
         
         rightNumberButton.backgroundColor = [UIColor whiteColor];
         rightNumberButton.layer.cornerRadius = 15;
+    
+        [rightNumberButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        
         [self.contentView addSubview:rightNumberButton];
+        
+        
+        /*
+         
+         UIViewController has a UIView property called .view
+         UITableViewController has a UIView property called .tableView
+         UITableViewCell has a UIVIew property called .contentView
+         
+         */
     
         
 
@@ -80,12 +94,20 @@
         
         
         
-        UIButton * nextViewButton = [[UIButton alloc] initWithFrame:CGRectMake(275, 15, 30, 30)];
+//        UIButton * nextViewButton = [[UIButton alloc] initWithFrame:CGRectMake(275, 15, 30, 30)];
+//        
+//        nextViewButton.backgroundColor = [UIColor redColor];
+//        nextViewButton.layer.cornerRadius = 15;
+//        [self.contentView addSubview:nextViewButton];
         
-        nextViewButton.backgroundColor = [UIColor redColor];
-        nextViewButton.layer.cornerRadius = 15;
+    
+       //// PNG Images
+        
+        nextViewButton = [[UIButton alloc] initWithFrame:CGRectMake(275, 15, 30, 30)];
+        
+        [nextViewButton setImage:[UIImage imageNamed:@"profileArrow"] forState:UIControlStateNormal];
+        
         [self.contentView addSubview:nextViewButton];
-        
         
         [nextViewButton addTarget:self action:@selector(nextViewButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         
@@ -102,6 +124,24 @@
 //        UILabel * followersLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 100, 20, 20)];
 //        
 //        NSString * text = @"Followers: 20";
+        
+        
+      /// GETTING A LABEL WITH BORDER
+        
+        /*
+        UILabel * testLabel = [[UILabel  alloc] initWithFrame:CGRectMake(200, 10, 100, 100)];
+        
+        testLabel.text = @"Hi";
+        testLabel.layer.borderColor = [UIColor blackColor].CGColor;
+        testLabel.layer.borderWidth = 3;
+        testLabel.backgroundColor = [UIColor clearColor];
+        testLabel.textColor = [UIColor blackColor];
+        testLabel.font = [UIFont fontWithName:@"helvetivca" size:14];
+        
+        
+        [self.contentView addSubview:testLabel];
+        */
+        
         
     }
     
@@ -124,11 +164,11 @@
 {
    _friendInfo = friendInfo;
    
-   NSURL * url = [NSURL URLWithString:friendInfo[@"avatar_url"]];
+    NSURL * url = [NSURL URLWithString:friendInfo[@"avatar_url"]];
     
-  NSData * data = [NSData dataWithContentsOfURL:url];
+    NSData * data = [NSData dataWithContentsOfURL:url];
 
-  UIImage * image  = [UIImage imageWithData:data];
+    UIImage * image  = [UIImage imageWithData:data];
     
    
     friendImage.image = image;
@@ -136,6 +176,13 @@
     friendName.text = friendInfo[@"login"];
     
     friendLocation.text = @"Atlanta, GA";
+    
+    NSNumber* count = self.friendInfo[@"public_gists"];
+    
+    [rightNumberButton setTitle:[NSString stringWithFormat:@"%@", count] forState:UIControlStateNormal];
+    
+    
+    
     
 //    friendLocation.text = friendInfo[@"location"];
     
@@ -172,18 +219,18 @@
 
 - (void)gistButtonClicked
 {
-    GHFViewController * profileView = [[GHFViewController alloc] init];
+    GHFViewController * gistView = [[GHFViewController alloc] init];
     
-    profileView.view.backgroundColor = [UIColor lightGrayColor];
+    gistView.view.backgroundColor = [UIColor lightGrayColor];
     
     /// SETTER METHOD ////
     
     NSString * gistURL = [NSString stringWithFormat:@"https://gist.github.com/%@",self.friendInfo[@"login"]];
     
     
-    profileView.friendInfo = @{@"html_url":gistURL};
+    gistView.friendInfo = @{@"html_url":gistURL};
     
-    [self.navigationController pushViewController:profileView animated:YES];
+    [self.navigationController pushViewController:gistView animated:YES];
 }
    
 

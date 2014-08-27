@@ -43,6 +43,7 @@
 }
 
 
+
 - (void)setFriendInfo:(NSDictionary *)friendInfo
 {
     _friendInfo = friendInfo;
